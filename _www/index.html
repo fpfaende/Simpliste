@@ -3,8 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link href="favicon.ico" rel="shortcut icon">
+  
+  <!-- the favicon -->
+  <link rel=icon href="http://www.complexcity.org/workshop/UTseus-16.png" sizes="16x16" type="image/png">
+  <link rel=icon href="http://www.complexcity.org/workshop/UTseus-win.ico" sizes="16x16 32x32 256x256" type="image/vnd.microsoft.icon">
+  <link rel=icon href="http://www.complexcity.org/workshop/UTseus-mac.icns" sizes="128x128 512x512 1024x1024">
   <link rel="stylesheet" href="css/style.css">
+  
+  <!-- mapbox -->
+  <script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js'></script>
+  <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.css' rel='stylesheet' />
+  <!--[if lte IE 8]>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.ie.css' rel='stylesheet' >
+  <![endif]-->
   <title></title>  
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
@@ -13,225 +24,90 @@
   <div class="container">
 
     <header class="header clearfix">
-      <div class="logo">.Simpliste</div>
-
-      <nav class="menu_main">
-        <ul>
-          <li class="active"><a href="#">About</a></li>
-          <li><a href="#">Skins</a></li>
-          <li><a href="#">Samples</a></li>
-        </ul>
-      </nav>
+      <!-- logo goes here-->
+      <div class="logo"><a href="complexcity.org" alt="Complexcity Lab home" title="go home"><img src="http://www.complexcity.org/workshop/images/logo-ComplexCity.png" class="img-logo" alt="ComplexCity is a Sino-French joint lab program" /></a></div>
+      
+      <!-- credit work in the top corner, image in css -->
+      <div id="corner"></div>
     </header>
 
-
+    <a name="workshop"></a>
     <div class="info">
-      <article class="hero clearfix">
+      <article class="hero clearfix center">
         <div class="col_100">
-          <h1>Simplest solution for your simple tasks</h1>
-          <p>You don't always need to make difficult work of running management system with administrative panel to have a web site. “Simpliste” is a very simple and easy to use HTML template for web projects where you only need to create one or couple of pages with simple layout. If you are working on a lightweight information page with as less efforts for you to code and as less kilobytes  for the user to download as possible, “Simpliste” is what you need.</p>
-          <p>No CMS required and it's free. Clean code will make your task even easier. HTML5 and CSS3 bring all their features for your future site. This template has skins which you can choose from. No images are used for styling.</p>
-          <p>Are you worried about convenience of your site users with mobile devices? “Simpliste” responds to the width of user's device and makes information more accessible.</p>
+          <h1>Smart City Workshop #7</h1>
+          <h2>A Comprehensive Research Event to Explore Cities Issues</h2>
+          <!-- Picture Attribution for Licenced work-->
+          <p class="right small"><a href="http://creativecommons.org/licenses/by-sa/2.0/">cc by-sa</a>, <a href="http://www.flickr.com/photos/dvyang/8435954834/">photo by DvYang</a></p>
+      		
         </div>
       </article>
 
-
+      <!-- the WHEN -->
       <article class="article clearfix">
-        <div class="col_33">
-          <h2>Clean code</h2>
-          <p>HTML5 and CSS3 made live of web developers easier than ever. Welcome to the world where less code and less files required. “Simpliste” has different skins and all of them are created with no images for styling at all.</p>
-          <p>Template contains CSS-reset based on the reset file from <a href="http://html5boilerplate.com/" target="_blank">HTML5 boilerplate</a> which makes appearens of “Simpliste” skins consistent in different browsers.</p>
-          <p>Print styles and styles for mobile devices are already included in the stylesheet.</p>
+        <div class="col_33 center">
+          <h2 class="thin"><img src="images/clock.png" style="margin-right:5px" /> When</h2>
+          <p class="thin big">22 June 2013</p>
+          <p class="thin big">8:30am</p>
         </div>
 
+        <!-- the What -->
         <div class="col_33">
-          <h2>Responsive markup</h2>
-          <p>You know that now it's time to think more about your users with mobile devices. This template will make your site respond to your client's browser with no effort on your part.</p>
-          <p>Multi-column layout becomes one column for viewers with tablets, navigation elements become bigger for users with smartphones. And your desktop browser users will see just a normal web site.</p>
-          <p>Try changing the width of your browser window and you'll see how “Simpliste” works.</p>
+          <h2 class="center thin"><img src="images/lightbulb.png" style="margin-right:5px" />What</h2>
+          <p>The smart city workshop's objective is to share theories, methods and tools with other researchers in an open, comprehensive point of view, with the city as a common denominator. Everyone is invited to bring his ideas about the city so we can learn from each other and discuss city issues. Come take part in an active multidisciplinary community on broad range of city based analysis.</p>
+          <p><strong>Audience:</strong> Researchers and students from all scientific fields interested in discovering, discussing, collaborating to explore the urban space.</p>
         </div>
 
+        <!-- the WHERE -->
+        <!-- powered by mapbox: create an account on mapbox.com and do your own map, then publish on mapbox and get the link to paste it in script below -->
         <div class="col_33">
-          <h2>Easy to use</h2>
-          <p>“Simpliste” is not a template for a CMS. You can use its code right away after downloading without reading any documentation. Place your content, make customisations and voilà the site is ready to upload to the server.</p>
-          <p>All content management can be done by using existing sample blocks and styles. Almost every template style is represented among <a href="#samples">samples</a> on this page. Off course you can create your own styles, which is easy as well.</p>
+          <h2 class="center thin"><img src="images/google_maps.png" style="margin-right:5px" />Where</h2>     
+          <div style="position: relative;
+height: 300px;width:auto" class="clearfix"><div id='map'></div></div>
+          	<script type='text/javascript'>
+var map = L.mapbox.map('map', 'shangdaemon.map-glhkh389');
+</script>
+         <p>Building J, Room 102-a, Shanghai University, Baoshan Campus, 99 Shangda Road, Shanghai<br />宝山区上大路99号, 上海大学宝山校区, J楼102-a <br /><a href="http://www.smartshanghai.com/taxi/1580" target="_blank">Taxi Printout</a></p>
+          <p>     
         </div>
 
         <div class="clearfix"></div>
 
-
-        <h1>“Simpliste” in use</h1>
+        <!-- the WHO -->
+        <a name="speakers"></a>
+        <h1 class="center thin"><img src="images/parents.png" style="margin-right:5px" />The Keynote speakers</h1>
+        <div class="clearfix"></div>
+         <div class="col_100">
+          <ul class="thin keynote">
+         	 <li><strong>8:40</strong> — <em>Opening</em> — MonZen Tzen &amp; Fabien Pfaender (ComplexCity Lab Program, UTSEUS)</li>
+         	 <li><strong>8:50</strong> — <em>Welcome Address</em> — Frédéric Bretar (French Consul for Science and technology)</li>	 
+         	 <li><strong>9:00</strong> — <em>Institute of Smart City</em> — Wan WangGen (Sino-French Institute of Smart City, Shanghai University)<br /><span class="medium">Keywords</span>: Big Data,3D City Modeling,Intelligent Transportation,Urban Plan</li>
+         	 <li><strong>9:30</strong> — <em>Shanghai a megalopolis made by its inhabitants through history</em> — Jérémy Cheval (Architecture CAUP Tongji Shanghai &amp; ensaPB Paris)<br /><span class="medium">Keywords</span>: History, Urbanism, City, Architecture, heritage</li>
+         	 <li class="coffee"><strong>10:00</strong> — <em>Tea &amp; Socializing</em></li>
+         	 <li><strong>10:15</strong> — <em>A matter of density. A design approach to complexity and its representation</em> — Francesca Valsecchi (Tongji Shanghai, DensityDesign at Politecnico di Milano)<br /><span class="medium">Keywords</span>: information design, visualization, complex systems, design artifacts
+         	 <li><strong>10:45</strong> — <em>In the Process of Urbanisation: The role of ‘Smart City’ in Future Urbanism</em> — Ali Cheshmehzangi (Architecture and Urban Design, The University of Nottingham, Ningbo China)<br /><span class="medium">Keywords</span>: Urbanism, Urbanisation, Integrated Systems, Urban Management</li>
+         	 <li><strong>11:15</strong> — <em>Serious Gaming as a complex urban system exploratory method</em> — Yann Moulier-Boutang (Costech, Université de Technologie de Compiègne)<br /><span class="medium">Keywords</span>: Serious gaming, complexity, maintenance, émergent solutions, interaction methodology in social sciences, collateral behaviour </li>
+         	 <li class="coffee"><strong>11:45</strong> — <em>Tea &amp; Socializing</em></li>
+         	 <li><strong>12:00</strong> — <em>Monitoring and safety of urban system: issues and first example</em> — Pierre Beauseroy (LM2S, Université de Technologie de Troyes)<br /><span class="medium">Keywords</span>: safety, reliability, maintenance, sensors, detection, machine learning, audio analysis</li> 	 
+         	 <li><strong>12:30</strong> — <em>How to Big Data and Geovisualize for NGO</em> — Ronan Berder (CEO Wiredcraft)<br /><span class="medium">Keywords</span>: Big Data, API, Cartography, Visualization</li>
+         </ul>
+         </div>
         
-        <div class="col_50">
-          <h2>Sample content</h2>
-          
-          <h3>Principles behind “Simpliste”</h3>
-          <ul>
-             <li>Really simple</li>
-             <li>Has ready to use set of simple designs</li>
-             <li>It's written using HTML5 and CSS3</li>
-             <li>It responds to mobile devices</li>
-             <li>No CMS</li>
-             <li>Free</li>
-          </ul>
-          
-          <h3>How to use?</h3>
-          <ol>
-             <li>Choose one skin from the list above</li>
-             <li>Click download button</li>
-             <li>Unpack files</li>
-             <li>Make any customisation you need</li>
-             <li>Upload your new site to the server</li>
-          </ol>
-        </div>        
-
-        <div class="col_50">
-          <form action="#" method="post" class="form">
-            <h2>Sample form</h2>
-
-            <p class="col_50">
-              <label for="name">Simple name:</label><br/>
-              <input type="text" name="name" id="name" value="" />
-            </p>
-            <p class="col_50">
-              <label for="email">Simple e-mail:</label><br/>
-              <input type="text" name="email" id="email" value="" />
-            </p>
-            <div class="clearfix"></div>
-
-            <h3>Your favorite number</h3>
-            <p>
-              <div class="col_33">
-                <label for="radio-choice-1"><input type="radio" name="radio-choice-1" id="radio-choice-1" tabindex="2" value="choice-1" /> One</label><br/>
-                <label for="radio-choice-2"><input type="radio" name="radio-choice-1" id="radio-choice-2" tabindex="3" value="choice-2" /> Two</label><br/>
-                <label for="radio-choice-3"><input type="radio" name="radio-choice-1" id="radio-choice-3" tabindex="4" value="choice-3" /> Three</label>
-              </div>
-
-              <div class="col_33">
-                <label for="radio-choice-4"><input type="radio" name="radio-choice-1" id="radio-choice-4" tabindex="2" value="choice-1" /> Four</label><br/>
-                <label for="radio-choice-5"><input type="radio" name="radio-choice-1" id="radio-choice-5" tabindex="3" value="choice-2" /> Five</label><br/>
-                <label for="radio-choice-6"><input type="radio" name="radio-choice-1" id="radio-choice-6" tabindex="4" value="choice-3" /> Six</label>
-              </div>
-
-              <div class="col_33">
-                <label for="radio-choice-7"><input type="radio" name="radio-choice-1" id="radio-choice-7" tabindex="2" value="choice-1" /> Seven</label><br/>
-                <label for="radio-choice-8"><input type="radio" name="radio-choice-1" id="radio-choice-8" tabindex="3" value="choice-2" /> Eight</label><br/>
-                <label for="radio-choice-9"><input type="radio" name="radio-choice-1" id="radio-choice-9" tabindex="3" value="choice-2" /> Niine</label>
-              </div>
-
-            <div class="clearfix"></div>
-            </p>
-
-            <p>
-              <label for="select-choice">Simple city:</label>
-              <select name="select-choice" id="select-choice">
-                <option value="Choice 1">London</option>
-                <option value="Choice 2">Paris</option>
-                <option value="Choice 3">Rome</option>
-              </select>
-            </p>
-
-            <p>
-              <label for="textarea">Simple testimonial:</label><br/>
-              <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
-            </p>
-
-            <p>
-              <label for="checkbox"><input type="checkbox" name="checkbox" id="checkbox" /> Simple agreement</label><br/>
-            </p>
-
-            <div>
-                <button type="button" class="button">Submit</button>
-            </div>
-          </form>
-        </div>
-
-        <div class="clearfix"></div>
-
-
-        <div class="col_33">
-          <h2>More elements</h2>
-
-          <p>Use <code>strong</code> tag for information with <strong>strong importance</strong>. Use <code>em</code> tag to <em>stress emphasis</em> on a word or phrase.</p>
-
-          <p class="warning">Sample <code>.warning</code></p>
-          <p class="success">Sample <code>.success</code></p>
-          <p class="message">Sample <code>.message</code></p>
-        </div>
-
-        <div class="col_66">
-          <h2>CSS classes table</h2>
-
-          <table class="table">
-            <tr>
-              <th>Class</th>
-              <th>Description</th>
-            </tr>
-
-            <tr>
-              <td><code>.col_33</code></td>
-              <td>Column with 33% width</td>
-            </tr>
-            <tr>
-              <td><code>.col_50</code></td>
-              <td>Column with 50% width</td>
-            </tr>
-            <tr>
-              <td><code>.col_66</code></td>
-              <td>Column with 66% width</td>
-            </tr>
-            <tr>
-              <td><code>.col_100</code></td>
-              <td>Full width column with proper margins</td>
-            </tr>
-            <tr>
-              <td><code>.clearfix</code></td>
-              <td>Use after or wrap a block of floated columns</td>
-            </tr>
-            <tr>
-              <td><code>.left</code></td>
-              <td>Left text alignment</td>
-            </tr>
-            <tr>
-              <td><code>.right</code></td>
-              <td>Right text alignment</td>
-            </tr>
-            <tr>
-              <td><code>.center</code></td>
-              <td>Centered text alignment</td>
-            </tr>
-            <tr>
-              <td><code>.img_floatleft</code></td>
-              <td>Left alignment for images in content</td>
-            </tr>
-            <tr>
-              <td><code>.img_floatright</code></td>
-              <td>Right alignment for images in content</td>
-            </tr>
-            <tr>
-              <td><code>.img</code></td>
-              <td>Makes image change its width when browser window width is changed</td>
-            </tr>
-          </table>
-        </div>
-
-        <div class="clearfix"></div>
-
       </article>
     </div>
     
     <footer class="footer clearfix">
-      <div class="copyright">Keep it simplest</div>
-
-      <nav class="menu_bottom">
-        <ul>
-          <li class="active"><a href="#">About</a></li>
-          <li><a href="#">Skins</a></li>
-          <li><a href="#">Samples</a></li>
-        </ul>
-      </nav>
+     <article class="article clearfix">
+      <div class="col_100 center">
+      	<!-- the official credit -->
+      	<!-- put your many logos here to credit your great institutions and comrades -->
+        <a href="utseus.com" alt="Utseus homepage" title="Be Visionary, Join Us"><img class="img-logo" src="http://www.complexcity.org/workshop/images/logo-utseus-site.png" /></a>
+        </div>
+    
+      <div class="thin col_33"><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a><br />This site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>. Icons by <a rel="license" href="http://glyphicons.com">glyphicons.com</a></div>
+      </article>
+     
     </footer>
-
   </div>
 </body>
 </html>
